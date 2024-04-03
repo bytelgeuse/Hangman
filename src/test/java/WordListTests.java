@@ -4,12 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import org.example.WordList;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class WordListTests {
 
-    private static final WordList wordList = new WordList();
+    private final WordList wordList = new WordList();
 
     @Test
     public void ListIsNotNullTest(){
@@ -21,5 +22,12 @@ public class WordListTests {
     public void GetRandomWordTest(){
         String randomWord = wordList.getRandom();
         assertNotNull(randomWord);
+    }
+
+    @Test
+    public void removeWordTest(){
+        String word = wordList.getRandom();
+        wordList.removeWord(word);
+        assertFalse(wordList.getList().contains(word));
     }
 }
