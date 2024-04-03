@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
+import org.example.WordList;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class WordListTests {
 
