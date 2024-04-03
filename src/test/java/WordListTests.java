@@ -12,4 +12,10 @@ public class WordListTests {
         List<String> list = WordList.getList();
         assertNotNull(list);
     }
+
+    @Test
+    public void GetRandomWordTest(){
+        String randomWord = WordList.getRandom();
+        assertNotNull(randomWord);
+    }
 }
