@@ -3,6 +3,10 @@ package org.example;
 public class Player {
     private int attempts;
 
+    public Player(){
+        attempts = 3;
+    }
+
     public Player(int attempts){
         this.attempts = attempts;
     }
