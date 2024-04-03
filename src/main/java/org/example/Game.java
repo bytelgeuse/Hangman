@@ -85,11 +85,11 @@ public class Game {
                     counter++;
             System.out.println(counter);
             if(counter == currentWord.length()) {
-
+                System.out.println("\nВы отгадали слово!\n");
                 return 0;
             }
         }
-
+        System.out.println("\nУ вас закончились попытки!\n");
         return 1;
     }
 
