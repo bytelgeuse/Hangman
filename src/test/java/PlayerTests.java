@@ -10,4 +10,11 @@ public class PlayerTests {
     public void GetAttemptsTest(){
         assertEquals(PLAYER.getAttempts(), PLAYER_ATTEMPTS);
     }
+
+    @Test
+    public void SetAttemptsTest(){
+        int currentAttempts = 3;
+        PLAYER.setAttempts(currentAttempts);
+        assertEquals(PLAYER.getAttempts(), currentAttempts);
+    }
 }
