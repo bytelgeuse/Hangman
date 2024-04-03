@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.example.Game;
@@ -8,6 +9,10 @@ public class GameTests {
     private static final Game GAME = new Game();
     private static final String WORD = "Окошко";
 
+    @BeforeEach
+    public void init(){
+        GAME.getGuessedLetters().clear();
+    }
     @Test
     public void InitGameTest(){
         assertNotNull(GAME.getPlayer());

@@ -51,7 +51,7 @@ public class Game {
     }
 
     public String getHiddenWord(){
-        StringBuilder current = new StringBuilder(this.currentWord);
+        StringBuilder current = new StringBuilder(this.currentWord.toLowerCase());
 
         for(int i = 0; i < current.length(); i++){
             if(!guessedLetters.contains(current.charAt(i)))
@@ -62,7 +62,7 @@ public class Game {
     }
 
     public boolean checkLetter(char c){
-        if(currentWord.contains(String.valueOf(c))) {
+        if(currentWord.toLowerCase().contains(String.valueOf(c))) {
             addToGuessedLetters(c);
             return true;
         }
@@ -75,6 +75,22 @@ public class Game {
     public void updateCurrentWord(){
         wordList.removeWord(currentWord);
         setCurrentWord(wordList.getRandom());
+    }
+
+    public int start(){
+        if(player.getAttempts() != 0){
+            int counter = 0;
+            for(int i = 0; i < currentWord.length(); i++)
+                if(guessedLetters.contains(currentWord.toLowerCase().charAt(i)))
+                    counter++;
+            System.out.println(counter);
+            if(counter == currentWord.length()) {
+
+                return 0;
+            }
+        }
+
+        return 1;
     }
 
 }
