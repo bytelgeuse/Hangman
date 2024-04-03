@@ -68,4 +68,10 @@ public class Game {
         }
         return false;
     }
+
+    public void updateCurrentWord(){
+        wordList.removeWord(currentWord);
+        setCurrentWord(wordList.getRandom());
+    }
+
 }
