@@ -11,6 +11,8 @@ public class GameTests {
     public void InitGameTest(){
         assertNotNull(GAME.getPlayer());
         assertNotNull(GAME.getWordList());
+        assertNotNull(GAME.getCurrentWord());
+        assertNotNull(GAME.getGuessedLetters());
     }
 
     @Test
