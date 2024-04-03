@@ -38,4 +38,22 @@ public class GameTests {
         GAME.updateCurrentWord();
         assertNotEquals(GAME.getCurrentWord(), current);
     }
+
+    @Test
+    public void GameWonTest(){
+        GAME.setCurrentWord(WORD);
+        GAME.addToGuessedLetters('о');
+        GAME.addToGuessedLetters('к');
+        GAME.addToGuessedLetters('ш');
+        assertEquals(GAME.start(), 0);
+    }
+
+    @Test
+    public void GameLoseTest(){
+        GAME.setCurrentWord(WORD);
+        GAME.addToGuessedLetters('ц');
+        GAME.addToGuessedLetters('с');
+        GAME.addToGuessedLetters('п');
+        assertEquals(GAME.start(), 1);
+    }
 }
