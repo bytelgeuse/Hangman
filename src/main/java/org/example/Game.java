@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Game {
     private final Player player;
@@ -78,18 +75,53 @@ public class Game {
     }
 
     public int start(){
-        if(player.getAttempts() != 0){
-            int counter = 0;
-            for(int i = 0; i < currentWord.length(); i++)
-                if(guessedLetters.contains(currentWord.toLowerCase().charAt(i)))
-                    counter++;
-            System.out.println(counter);
-            if(counter == currentWord.length()) {
-                System.out.println("\nВы отгадали слово!\n");
-                return 0;
+        Scanner console = new Scanner(System.in);
+        String playerLetter;
+
+        while(player.getAttempts() != 0) {
+            System.out.println("Загаданное слово: " + getHiddenWord() + "\n");
+
+            do {
+                System.out.print("Введите вашу букву: ");
+                playerLetter = console.nextLine();
+            } while (playerLetter.toCharArray().length > 1);
+
+            if(checkLetter(playerLetter.charAt(0))){
+                if(player.getAttempts() != 0){
+                    int counter = 0;
+                    for(int i = 0; i < currentWord.length(); i++)
+                        if(guessedLetters.contains(currentWord.toLowerCase().charAt(i)))
+                            counter++;
+                    if(counter == currentWord.length()) {
+                        System.out.println("Вы отгадали слово \"" + getCurrentWord() + "\"!\n\n");
+                        return 0;
+                    }
+                }
             }
+            else {
+                switch (player.getAttempts()) {
+                    case (3):
+                        System.out.println("\nВы подошли к табуретке\n");
+                        break;
+                    case (2):
+                        System.out.println("\nВы встали на табурет\n");
+                        break;
+                    case (1):
+                        System.out.println("\nВы накинули петлю\n");
+                        break;
+                    case (0):
+                        System.out.println("\nВы погибли!\n");
+                        break;
+
+                }
+            }
+
+
+
         }
+
         System.out.println("\nУ вас закончились попытки!\n");
+        System.out.println("Загаданное слово: " + getCurrentWord() + "\n");
         return 1;
     }
 

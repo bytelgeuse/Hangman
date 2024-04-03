@@ -12,6 +12,8 @@ public class Main {
                 "Начнем!\n");
         while(hangman.start() != 1) {
             hangman.updateCurrentWord();
+            hangman.getGuessedLetters().clear();
+            hangman.getPlayer().setAttempts(3);
         }
     }
 }
