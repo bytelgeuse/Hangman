@@ -5,8 +5,10 @@ public class Game {
     private final WordList wordList;
 
     public Game(){
+        System.out.println("Инициализация игры \"Виселица\"...");
         player = new Player();
         wordList = new WordList();
+        System.out.println("Инициализация завершена");
     }
 
     public Player getPlayer() {
