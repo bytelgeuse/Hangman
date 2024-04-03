@@ -13,7 +13,12 @@ public class WordList {
         add("Город");
     }};
 
-    public static List<String> getList() {
+    public List<String> getList() {
         return list;
+    }
+
+    public String getRandom(){
+        int randomIndex = (int) (Math.random() * (list.size() - 1));
+        return list.get(randomIndex);
     }
 }

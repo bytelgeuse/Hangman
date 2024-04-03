@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -7,15 +9,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class WordListTests {
 
+    private static final WordList wordList = new WordList();
+
     @Test
     public void ListIsNotNullTest(){
-        List<String> list = WordList.getList();
+        List<String> list = wordList.getList();
         assertNotNull(list);
     }
 
     @Test
     public void GetRandomWordTest(){
-        String randomWord = WordList.getRandom();
+        String randomWord = wordList.getRandom();
         assertNotNull(randomWord);
     }
 }
