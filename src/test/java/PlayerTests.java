@@ -17,4 +17,12 @@ public class PlayerTests {
         PLAYER.setAttempts(currentAttempts);
         assertEquals(PLAYER.getAttempts(), currentAttempts);
     }
+
+    @Test
+    public void UpdateAttemptsTest(){
+        int currentAttempts = PLAYER.getAttempts();
+        int updateValue = -1;
+        PLAYER.updateAttempts(updateValue);
+        assertEquals(PLAYER.getAttempts(), currentAttempts + updateValue);
+    }
 }
