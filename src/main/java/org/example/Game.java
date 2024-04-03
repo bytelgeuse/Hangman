@@ -60,4 +60,12 @@ public class Game {
 
         return current.toString();
     }
+
+    public boolean checkLetter(char c){
+        if(currentWord.contains(String.valueOf(c))) {
+            addToGuessedLetters(c);
+            return true;
+        }
+        return false;
+    }
 }
