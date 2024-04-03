@@ -66,7 +66,10 @@ public class Game {
             addToGuessedLetters(c);
             return true;
         }
-        return false;
+        else {
+            player.updateAttempts(-1);
+            return false;
+        }
     }
 
     public void updateCurrentWord(){
