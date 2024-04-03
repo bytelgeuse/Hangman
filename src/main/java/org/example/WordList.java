@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordList {
-    //todo заполнить нормальными словами
-    
-
     private static final List<String> list = new ArrayList<String>() {{
-        add("Слова");
-        add("Для");
-        add("Теста");
+        add("Яблоко");
+        add("Машина");
+        add("Кресло");
+        add("Планета");
+        add("Университет");
+        add("Город");
     }};
 
     public static List<String> getList() {
