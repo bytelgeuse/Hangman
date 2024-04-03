@@ -21,4 +21,10 @@ public class WordList {
         int randomIndex = (int) (Math.random() * (list.size() - 1));
         return list.get(randomIndex);
     }
+
+    public void removeWord(String word){
+        list.remove(word);
+    }
+
+
 }
