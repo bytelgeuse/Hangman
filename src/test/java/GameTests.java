@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.example.Game;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class GameTests {
     private static final Game GAME = new Game();
     private static final String WORD = "Окошко";
@@ -20,5 +21,14 @@ public class GameTests {
         GAME.setCurrentWord(WORD);
         GAME.addToGuessedLetters('к');
         assertEquals(GAME.getHiddenWord(), "_к__к_");
+    }
+
+    @Test
+    public void CheckLetterTest(){
+        GAME.setCurrentWord(WORD);
+        char trueChar = 'к';
+        char falseChar = 'ц';
+        assertTrue(GAME.checkLetter(trueChar));
+        assertFalse(GAME.checkLetter(falseChar));
     }
 }
