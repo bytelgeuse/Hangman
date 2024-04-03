@@ -31,4 +31,11 @@ public class GameTests {
         assertTrue(GAME.checkLetter(trueChar));
         assertFalse(GAME.checkLetter(falseChar));
     }
+
+    @Test
+    public void UpdateWordTest(){
+        String current = GAME.getCurrentWord();
+        GAME.updateCurrentWord();
+        assertNotEquals(GAME.getCurrentWord(), current);
+    }
 }
